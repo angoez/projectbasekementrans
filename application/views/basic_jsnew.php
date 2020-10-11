@@ -75,3 +75,8 @@
 	  <!--begin::Page Scripts(used by this page)-->
 	  <script src="<?php echo base_url(); ?>assets2/dist/assets/js/pages/custom/login/login-general.js"></script>
 	  <!--end::Page Scripts-->
+	  <!--begin::Page Scripts(used by this page)
+	  <script src="<?php echo base_url(); ?>assets2/dist/assets/js/pages/crud/ktdatatable/base/data-ajax.js"></script>-->
+	    <script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+	  <!--end::Page Scripts-->

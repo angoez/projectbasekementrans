@@ -12,9 +12,9 @@ class Welcome extends CI_Controller
     public function index()
     {
         $data['alert'] = "";
-        $this->load->view('loginnew', $data);
-        //jika seasson login belum sudah ada maka tampilkan home
-        if ($this->session->userdata('login')) {
+        $this->load->view('loginnewnew', $data);
+        //jika seasson loginnew belum sudah ada maka tampilkan home
+        if ($this->session->userdata('loginnew')) {
             //jika seasson ada direct ke home
             redirect('home', 'refresh');
         }
@@ -22,12 +22,12 @@ class Welcome extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('login');
+        $this->session->unset_userdata('loginnew');
         $this->session->unset_userdata('survei');
         redirect('welcome', 'refresh');
     }
 
-    public function relogin()
+    public function reloginnew()
     {
         if (!empty($this->input->get('url'))) {
             $data['url'] = $this->input->get('url');
@@ -42,18 +42,18 @@ class Welcome extends CI_Controller
                 $data['url'] = $data['url'];
             }
             // print_r($data['url']);die;
-            $data['alert'] = "Silahkan login kembali";
-            $this->load->view('login', $data);
-            //jika seasson login belum sudah ada maka tampilkan home
+            $data['alert'] = "Silahkan loginnew kembali";
+            $this->load->view('loginnew', $data);
+            //jika seasson loginnew belum sudah ada maka tampilkan home
             if ($this->session->userdata('login')) {
                 //jika seasson ada direct ke home
                 redirect('home', 'refresh');
             }
         } else {
-            $data['alert'] = "Silahkan login kembali";
-            $this->load->view('login', $data);
+            $data['alert'] = "Silahkan loginnew kembali";
+            $this->load->view('loginnew', $data);
 
-            //jika seasson login belum sudah ada maka tampilkan home
+            //jika seasson loginnew belum sudah ada maka tampilkan home
             if ($this->session->userdata('login')) {
                 //jika seasson ada direct ke home
                 redirect('home', 'refresh');
@@ -61,13 +61,13 @@ class Welcome extends CI_Controller
         }
     }
 
-    public function faillogin()
+    public function failloginnew()
     {
-        $data['alert'] = "Username atau Password tidak valid. Silahkan login kembali";
-        $this->load->view('login', $data);
+        $data['alert'] = "Username atau Password tidak valid. Silahkan loginnew kembali";
+        $this->load->view('loginnewnew', $data);
 
-        //jika seasson login belum sudah ada maka tampilkan home
-        if ($this->session->userdata('login')) {
+        //jika seasson loginnew belum sudah ada maka tampilkan home
+        if ($this->session->userdata('loginnew')) {
             //jika seasson ada direct ke home
             redirect('home', 'refresh');
         }

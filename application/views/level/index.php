@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<?= $this->load->view('head'); ?>
-	</head>
-	<body class="sidebar-mini wysihtml5-supported <?= $this->config->item('color')?>">
-		<div class="wrapper">
-			<?= $this->load->view('nav'); ?>
-			<?= $this->load->view('menu_groups'); ?>		
+<?php echo $this->load->view('headnew'); ?>
+<?php echo $this->load->view('menu_groupsnew'); ?>
+<?php echo $this->load->view('navnew'); ?>
+	<div class="wrapper">		
 			<div class="content-wrapper">			
 				<section class="content-header">
 					<h1>Level</h1>
@@ -69,7 +64,7 @@
 				</section>			
 			</div>		
 		</div>	
-		<?= $this->load->view('basic_js'); ?>	
+		<?php echo $this->load->view('basic_jsnew'); ?>	
 		<script type='text/javascript'>
 			function konfirmasi(data){
 				var x = confirm('Are you sure?');
